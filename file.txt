@@ -1,2 +1,11 @@
 main branch adding some text
+<<<<<<< HEAD
 adding some last lines after switching back to main branch
+=======
+
+
+added some new text in feature branch with random meaning
+>>>>>>> feature1
+
+
+merge confict resolved
