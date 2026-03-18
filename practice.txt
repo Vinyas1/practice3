@@ -1,2 +1,80 @@
-practice.txtpractice.txtpractice.txtpractice.txtpractice.txtpractice.txtpractice.txtpractice.txtpractice.txtpractice.txtpractice.txtpractice.txtpractice.txtpractice.txtpractice.txt
-practice.txtpractice.txtpractice.txtpractice.txtpractice.txtpractice.txtpractice.txtpractice.txtpractice.txtpractice.txtpractice.txtpractice.txtpractice.txtpractice.txtpractice.txtpractice.txt
+Microsoft Windows [Version 10.0.26200.8037]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\student\Desktop\myapp>docker build -t myapp .
+[+] Building 2.3s (8/8) FINISHED                                                                                                                         docker:desktop-linux
+ => [internal] load build definition from Dockerfile                                                                                                                     0.0s
+ => => transferring dockerfile: 102B                                                                                                                                     0.0s
+ => [internal] load metadata for docker.io/library/python:3.10                                                                                                           2.0s
+ => [internal] load .dockerignore                                                                                                                                        0.0s
+ => => transferring context: 2B                                                                                                                                          0.0s
+ => [1/3] FROM docker.io/library/python:3.10@sha256:70a693a5ab49ada7d4d5d974678288262bfeccadf06b8362c90ec9cd1a9b7c97                                                     0.0s
+ => => resolve docker.io/library/python:3.10@sha256:70a693a5ab49ada7d4d5d974678288262bfeccadf06b8362c90ec9cd1a9b7c97                                                     0.0s
+ => [internal] load build context                                                                                                                                        0.0s
+ => => transferring context: 163B                                                                                                                                        0.0s
+ => CACHED [2/3] WORKDIR /app                                                                                                                                            0.0s
+ => [3/3] COPY . .                                                                                                                                                       0.0s
+ => exporting to image                                                                                                                                                   0.1s
+ => => exporting layers                                                                                                                                                  0.0s
+ => => writing image sha256:d5e237691a41a62cb5c4e35f641ccfb75289ca111c7f01846af2dfe9c64f8c5e                                                                             0.0s
+ => => naming to docker.io/library/myapp                                                                                                                                 0.0s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/znju2nzstfqzt9ecrydn0felw
+
+What's next:
+    View a summary of image vulnerabilities and recommendations → docker scout quickview
+
+C:\Users\student\Desktop\myapp>docker login
+
+USING WEB BASED LOGIN
+To sign in with credentials on the command line, use 'docker login -u <username>'
+
+Your one-time device confirmation code is: JLHM-DLJN
+Press ENTER to open your browser or submit your device code here: https://login.docker.com/activate
+
+Waiting for authentication in the browser…
+login canceled
+
+C:\Users\student\Desktop\myapp>docker login
+
+USING WEB BASED LOGIN
+To sign in with credentials on the command line, use 'docker login -u <username>'
+
+Your one-time device confirmation code is: NBHL-TTJM
+Press ENTER to open your browser or submit your device code here: https://login.docker.com/activate
+
+Waiting for authentication in the browser…
+Login Succeeded
+
+C:\Users\student\Desktop\myapp>docker images
+REPOSITORY   TAG       IMAGE ID       CREATED          SIZE
+myapp        latest    d5e237691a41   11 minutes ago   1.09GB
+<none>       <none>    1dcd3d8ea0a2   23 hours ago     1.09GB
+
+C:\Users\student\Desktop\myapp>docker tag d5e237691a41 vinyas19/myapp
+
+C:\Users\student\Desktop\myapp>docker images
+REPOSITORY       TAG       IMAGE ID       CREATED          SIZE
+myapp            latest    d5e237691a41   12 minutes ago   1.09GB
+vinyas19/myapp   latest    d5e237691a41   12 minutes ago   1.09GB
+<none>           <none>    1dcd3d8ea0a2   23 hours ago     1.09GB
+
+C:\Users\student\Desktop\myapp>dockr push vinyas19/myapp
+'dockr' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\student\Desktop\myapp>docker push vinyas19/myapp
+Using default tag: latest
+The push refers to repository [docker.io/vinyas19/myapp]
+108e23756f43: Pushed
+8035dbb65829: Pushed
+c133d2fe7445: Mounted from library/python
+7fe682552c2a: Mounted from library/python
+bc7d147c4fff: Mounted from library/python
+6afcfc3ecd04: Mounted from library/python
+817e939a94eb: Mounted from library/python
+dd6e353abeff: Mounted from library/python
+c5864b4cf4c9: Mounted from library/python
+latest: digest: sha256:229c4b1942a0509cdea0ae92b6e1db5b9c9fec33fc575b581bf555edfc540e66 size: 2209
+
+C:\Users\student\Desktop\myapp>
